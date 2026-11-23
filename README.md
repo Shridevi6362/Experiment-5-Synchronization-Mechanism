@@ -85,8 +85,7 @@ To learn how concurrent processes coordinate to share system resources safely.
 ### 5. Synchronization Comparison
 ![Compare Sync](sreenshots/compare_sync.png)
 
-### 6. Additional Execution Output
-![Additional Output](<sreenshots/Screenshot 2026-10-27 102333.png>)
+
 
 ## Conclusion
 
