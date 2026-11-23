@@ -67,26 +67,50 @@ To learn how concurrent processes coordinate to share system resources safely.
 | **Synchronized Execution** | Mutex (`pthread_mutex_lock`) | Thread-Safe Access | Counter value reaches exact expected total deterministically. |
 | **Producer-Consumer / Boundary** | Semaphore (`sem_wait` / `sem_post`) | Controlled Buffer / Resource Limits | Threads wait gracefully when resources are empty/full. |
 
+
+## Execution Output Screenshots
+
+### 1. Race Condition & Critical Section
+![Race and Critical](<sreenshots/race and critical.png>)
+
+### 2. Atomic & Barrier Synchronization
+![Atomic and Barrier](<sreenshots/atomic and barrier.png>)
+
+### 3. Semaphore Synchronization
+![Semaphore](sreenshots/semaphore.png)
+
+### 4. OpenMP Thread Scaling (4, 8, 8 Threads)
+![OMP Num Threads](<sreenshots/omp num threadusing 4,8,8.png>)
+
+### 5. Synchronization Comparison
+![Compare Sync](sreenshots/compare_sync.png)
+
+### 6. Additional Execution Output
+![Additional Output](<sreenshots/Screenshot 2026-10-27 102333.png>)
+
 ## Conclusion
 
 Through this experiment, we studied and implemented POSIX synchronization primitives in Linux C programming. The practical implementation demonstrates how race conditions occur during unsynchronized resource sharing and how mutex locks and semaphores provide mutual exclusion to maintain data consistency in concurrent systems.
 
-## Project Structure
+
+
+## Repository Structure
 
 ```text
-synchronization_lab/
-│
-├── README.md                  # Detailed documentation & lab guide
-├── Makefile                   # Automation script for build and execution
-│
-├── src/                       # C Source files for synchronization implementations
-│   ├── program.c              # Main combined synchronization program
-│   ├── race_condition.c       # Unsynchronized implementation (demonstrates race condition)
-│   ├── mutex_sync.c           # Synchronized implementation using POSIX Mutex
-│   └── semaphore_sync.c       # Synchronized implementation using POSIX Semaphores
-│
-├── bin/                       # Output directory for compiled binaries
-│   └── program                # Executable file generated after compilation
-│
-└── docs/                      # Supplementary documentation and logs
-    └── execution_output.log   # Sample output and execution verification logs
+├── sreenshots/
+│   ├── Screenshot 2026-10-27 102333.png
+│   ├── atomic and barrier.png
+│   ├── compare_sync.png
+│   ├── omp num threadusing 4,8,8.png
+│   ├── race and critical.png
+│   └── semaphore.png
+├── README.md
+├── atomic
+├── atomic.c
+├── barrier
+├── barrier.c
+├── compare_syn
+├── compare_sync
+├── critical.c
+├── race.c
+└── semaphore.c
